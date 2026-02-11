@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Opal Focus Session Setup</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#b0ffa8",
+                        "background-light": "#f6f8f5",
+                        "background-dark": "#040404",
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1.5rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+        }
+        .timer-glow {
+            text-shadow: 0 0 20px rgba(176, 255, 168, 0.15);
+        }
+        .ios-shadow {
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-white min-h-screen flex items-center justify-center p-4">
+<!-- Phone Container (Simulating iOS) -->
+<div class="relative w-full max-w-[400px] h-[844px] bg-background-light dark:bg-background-dark rounded-[3rem] overflow-hidden border-[8px] border-slate-200 dark:border-[#1a1a1a] shadow-2xl flex flex-col">
+<!-- Status Bar Space -->
+<div class="h-12 flex justify-between items-center px-8 pt-4">
+<span class="text-xs font-semibold">9:41</span>
+<div class="flex gap-1.5">
+<span class="material-icons text-[14px]">signal_cellular_alt</span>
+<span class="material-icons text-[14px]">wifi</span>
+<span class="material-icons text-[14px]">battery_full</span>
+</div>
+</div>
+<!-- Header -->
+<header class="flex items-center justify-between px-6 pt-6 pb-4">
+<div class="w-8"></div> <!-- Placeholder for balance -->
+<h1 class="text-lg font-semibold tracking-tight">Start a Session</h1>
+<button class="w-8 h-8 flex items-center justify-center bg-slate-100 dark:bg-zinc-800/50 rounded-full transition-colors hover:bg-zinc-700">
+<span class="material-icons text-sm">close</span>
+</button>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col px-6 gap-8">
+<!-- Timer Section -->
+<section class="flex-1 flex flex-col items-center justify-center py-4">
+<div class="relative">
+<span class="text-7xl font-bold tracking-tighter timer-glow">01:00:00</span>
+<div class="mt-4 flex justify-center gap-1">
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></div>
+<span class="text-[10px] uppercase tracking-widest text-zinc-500 font-medium">Ready to focus</span>
+</div>
+</div>
+</section>
+<!-- Settings Cards -->
+<div class="space-y-4 mb-10">
+<!-- Intensity Selector -->
+<div class="bg-white dark:bg-zinc-900/80 rounded-lg p-5 border border-slate-100 dark:border-zinc-800/50">
+<div class="flex items-center justify-between mb-4">
+<span class="text-sm font-medium text-zinc-400">Intensity</span>
+<span class="material-icons text-primary text-lg">bolt</span>
+</div>
+<div class="bg-slate-100 dark:bg-black/40 p-1 rounded-full flex gap-1 relative">
+<button class="flex-1 py-2.5 text-xs font-bold rounded-full transition-all text-zinc-500">
+                            Normal
+                        </button>
+<button class="flex-1 py-2.5 text-xs font-bold rounded-full bg-primary text-black shadow-sm">
+                            Deep Focus
+                        </button>
+</div>
+</div>
+<!-- Apps Block Card -->
+<div class="bg-white dark:bg-zinc-900/80 rounded-lg p-5 border border-slate-100 dark:border-zinc-800/50 flex items-center justify-between group cursor-pointer active:scale-[0.98] transition-transform">
+<div class="space-y-3">
+<span class="text-sm font-medium text-zinc-400 block">Apps to Block</span>
+<div class="flex -space-x-2">
+<div class="w-9 h-9 rounded-xl bg-[#4A154B] border-2 border-white dark:border-zinc-900 flex items-center justify-center overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="Slack application icon logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZjybsmpTz_NYqeULygn19nxE3biNIe3CbyjE_dV9YXRHt4OrtyR1LgH1Zj-VOSuNA28QAbH-G3O3b4BWINxV6nbAogJ6vC9P5fc1-QQ1Pq6xlqwS8Y1DnxRQptkx1yWQadcLHdwsp6AZBXGIQ7HuICMSDMA6qZyMJRDmLM81i695K8d9QS1yf5Y8OSNzy2HBN231ct-2bhf56xfCsPrC8daHyJW7KW4kVqk1rF8IAQVfFoaumaNVW3xEm_NGDQQRvGimpiqcQIBI"/>
+</div>
+<div class="w-9 h-9 rounded-xl bg-blue-500 border-2 border-white dark:border-zinc-900 flex items-center justify-center overflow-hidden">
+<span class="material-icons text-white text-lg">mail</span>
+</div>
+<div class="w-9 h-9 rounded-xl bg-zinc-800 border-2 border-white dark:border-zinc-900 flex items-center justify-center">
+<span class="text-[10px] font-bold">+12</span>
+</div>
+</div>
+</div>
+<span class="material-icons text-zinc-600">chevron_right</span>
+</div>
+</div>
+</main>
+<!-- Footer / Action Area -->
+<footer class="px-6 pb-12 pt-4 flex flex-col items-center gap-6">
+<button class="w-full bg-primary text-black font-bold py-5 rounded-full text-lg shadow-[0_10px_30px_-5px_rgba(176,255,168,0.3)] hover:scale-[1.02] active:scale-[0.98] transition-all">
+                Start Focus
+            </button>
+<p class="text-zinc-500 dark:text-[#A1A1AA] text-xs text-center leading-relaxed max-w-[280px] italic">
+                "The successful warrior is the average man, with laser-like focus."
+            </p>
+</footer>
+<!-- iPhone Notch/Home Bar -->
+<div class="absolute top-2 left-1/2 -translate-x-1/2 w-[120px] h-[35px] bg-black rounded-b-[2rem] z-50"></div>
+<div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-[134px] h-[5px] bg-zinc-800 rounded-full"></div>
+</div>
+</body></html>
